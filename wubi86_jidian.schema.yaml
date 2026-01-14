@@ -67,7 +67,7 @@ translator:
   max_phrase_length: 2
   enable_completion: true
   enable_user_dict: true
-  db_class: tabledb
+#  db_class: tabledb
   disable_user_dict_for_patterns:
     - "^z.*$"
 
