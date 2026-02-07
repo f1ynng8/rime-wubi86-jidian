@@ -37,7 +37,7 @@ engine:
     - ascii_segmentor
     - matcher
     - "affix_segmentor@mkst"
-    - abc_segmentor
+    #- abc_segmentor
     - punct_segmentor
     - fallback_segmentor
 
@@ -45,7 +45,8 @@ engine:
     - punct_translator
     - reverse_lookup_translator
     - table_translator
-    - lua_translator@date_translator # 自定义系统变量输出
+    - lua_translator@*date_translator
+    - lua_translator@*symbol_translator
     - "table_translator@mkst"
   filters:
 #    - lua_filter@single_char_first_filter # 单字优先方法
@@ -71,9 +72,9 @@ translator:
   disable_user_dict_for_patterns:
     - "^z.*$"
 
-abc_segmentor:
-  extra_tags:
-    - reverse_lookup
+#abc_segmentor:
+#  extra_tags:
+#    - reverse_lookup
 mkst:
   __include: /translator
   initial_quality: 10
